@@ -30,7 +30,7 @@
         .header-inner__nav
           %ul.header-inner__nav--lists-left
             %li.header-inner__nav--lists-left__item.header-inner__nav--lists-left__item__first
-              =link_to "カテゴリー","#",class: "header-inner__nav--lists-left__item"
+              = render partial: 'products/header', parent: @parents
             %li.header-inner__nav--lists-left__item
               =link_to "ブランド","#",class: "header-inner__nav--lists-left__item"
           %ul.header-inner__nav--lists-right    

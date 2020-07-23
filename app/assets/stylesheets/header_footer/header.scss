@@ -125,3 +125,120 @@
     }
     
 }
+
+//category
+.header__menu-box {
+  height: 46px;
+  margin: 8px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &--left {
+    display: flex;
+    justify-content: space-between;
+    .fas.fa-list-ul{
+      color: #eb11119c;
+      font-size: 12px;
+      margin-right: 4px;
+    }
+    ul {
+      li.header__menu-box--left__category {
+        font-weight: bold;
+        font-size:14px;
+        margin-right: 10px;
+        height: 55px;
+        line-height: 46px;
+        position: relative;
+        &:hover {
+          color: #7680efb1;
+          ul {
+            li {
+              display: block;
+              height: 44px;
+            }
+          }
+        }
+        ul {
+          position: absolute;
+          top: 44px;
+          z-index: 1000;
+          font-weight: normal;
+          li {
+            width: 220px;
+            height: 0;
+            display: none;
+            background-color: white;
+            &:hover {
+              color: #7680efb1;
+              .header__menu-box--left__children {
+                &__child {
+                  display: block;
+                  height: 30px;
+                }
+              }
+            }
+            a {
+              &:hover {
+                background-color: #eb11119c;
+                color: white;
+              }
+            }
+            .header__menu-box--left__children {
+              position: absolute;
+              top: 0;
+              left: 220px;
+              z-index: 1000;
+              height: 616px;
+              background-color: white;
+              border-right: 1px solid #c1bfbf;
+              &__child {
+                width: 220px;
+                height: 0;
+                display: none;
+                background-color: white;
+                &:hover {
+                  color: #7680efb1;
+                  .header__menu-box--left__grand-children {
+                    &__grand-child {
+                      display: block;
+                      height: 30px;
+                    }
+                  }
+                }
+                a {
+                  font-size: 14px;
+                  &:hover {
+                    background-color: #f3f3f3;
+                  }
+                }
+                .header__menu-box--left__grand-children {
+                  position: absolute;
+                  top: 0;
+                  left: 220px;
+                  z-index: 1000;
+                  height: 616px;
+                  background-color: white;
+                  border-right: 1px solid #c1bfbf;
+
+                  &__grand-child {
+                    width: 300px;
+                    height: 0;
+                    display: none;
+                    background-color: white;
+                    a {
+                      font-size: 14px;
+                      &:hover {
+                        background-color: #f3f3f3;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

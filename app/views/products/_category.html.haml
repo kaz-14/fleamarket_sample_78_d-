@@ -1,0 +1,24 @@
+.header__menu-box
+  .header__menu-box--left
+    %ul
+      %li.header__menu-box--left__category
+        = link_to category_index_path do
+          = fa_icon "list-ul", class: 'header__menu-box--left__icon'
+          カテゴリーから探す
+        %ul.header__menu-box--left__parents
+          %li.header__menu-box--left__parents__parent
+            = link_to "レディース", category_path(id: 1)
+            %ul.header__menu-box--left__children
+              = render partial: "products/header_child", collection: @category_children1, as: "category"
+              %li.header__menu-box--left__children__child
+              = link_to "#{category.category}", category_path(id: category.id)
+              %ul.header__menu-box--left__grand-children 
+              = render partial: "products/header_grand-child", collection: category.children, as: "children"
+
+              %li.header__menu-box--left__grand-children__grand-child
+              = link_to "#{children.category}", category_path(id: children)
+
+          %li.header__menu-box--left__parents__parent
+            = link_to "メンズ", category_path(id: 2)
+            %ul.header__menu-box--left__children
+              = render partial: "products/header_child", collection: @category_children2, as: "category"
